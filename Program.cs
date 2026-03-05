@@ -18,7 +18,7 @@ namespace actividad_10_20
             string carrera;
             for (int i = 0; i < 3; i++)
            {
-                Console.WriteLine($"Ingrese  ID NO.{i + 1} de 3 productos");
+                Console.WriteLine($"Ingrese  Carne NO.{i + 1} de 3 productos");
                 int.TryParse(Console.ReadLine(), out clave);
                 if (carne.ContainsKey(clave))
                 {
@@ -42,7 +42,7 @@ namespace actividad_10_20
            
             foreach (var item in carne)
             {
-                Console.WriteLine("carne Id: " + item.Key + "valor: " + item.Value);
+                Console.WriteLine("carne: " + item.Key + "valor: " + item.Value);
 
             }
 
