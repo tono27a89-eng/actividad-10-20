@@ -11,15 +11,16 @@ namespace actividad_10_20
         static void Main(string[] args)
         {
             Console.WriteLine("Cree un diccionario donde la clave sea el carné (int) y el valor sea una tupla con Nombre, Edad y Carrera. Permita agregar 3 estudiantes y luego muestre toda la información usando foreach.");
-
-
+            Dictionary<int,(string,int,string)>carne=new Dictionary<int,(string,int,string)>();
+            int clave;
+            string nombre;
+            int edad;
+            string carrera;
             for (int i = 0; i < 3; i++)
-            {
-
-
+           {
                 Console.WriteLine($"Ingrese  ID NO.{i + 1} de 3 productos");
-                int.TryParse(Console.ReadLine(), out Id);
-                if (estudiante.ContainsKey(Id))
+                int.TryParse(Console.ReadLine(), out clave);
+                if (carne.ContainsKey(clave))
                 {
                     Console.WriteLine("ID ya ingresado");
                     i--;
@@ -29,31 +30,19 @@ namespace actividad_10_20
                 {
                     Console.WriteLine("ingrese nombre:");
                     nombre = Console.ReadLine();
-                    estudiante.Add(Id, nombre);
+                    Console.WriteLine("ingrese edad");
+                    int.TryParse (Console.ReadLine(), out edad);
+                    Console.WriteLine("ingrese carrera");
+                    carrera = Console.ReadLine();
+                    carne.Add(clave,(nombre,edad,carrera));
 
                 }
 
             }
-            bool validar = false;
-            while (validar != true)
+           
+            foreach (var item in carne)
             {
-
-
-                Console.WriteLine("ingrese ID de estudiante que desea elimar");
-                int.TryParse(Console.ReadLine(), out Id);
-                if (estudiante.ContainsKey(Id))
-                {
-                    estudiante.Remove(Id);
-                    validar = true;
-                }
-                else
-                {
-                    Console.WriteLine("ID invalido");
-                }
-            }
-            foreach (var item in estudiante)
-            {
-                Console.WriteLine("prodcuto Id: " + item.Key + "valor: " + item.Value);
+                Console.WriteLine("carne Id: " + item.Key + "valor: " + item.Value);
 
             }
 
